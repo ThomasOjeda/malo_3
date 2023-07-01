@@ -6,9 +6,9 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./add-task-input.component.scss'],
 })
 export class AddTaskInputComponent {
-  @Output() inputValueChanged = new EventEmitter();
+  @Output() valueChangedEvent = new EventEmitter();
 
   valueChanged($event: KeyboardEvent) {
-    this.inputValueChanged.emit(($event.target as HTMLInputElement).value);
+    this.valueChangedEvent.emit(($event.target as HTMLInputElement).value);
   }
 }

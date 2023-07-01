@@ -6,12 +6,12 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./add-task-form.component.scss'],
 })
 export class AddTaskFormComponent {
-  @Output() addTaskTrigger = new EventEmitter<string>();
+  @Output() addTaskEvent = new EventEmitter<string>();
   newTaskName!: string;
-  registerInputChange(newValue: string) {
+  handleInputChange(newValue: string) {
     this.newTaskName = newValue;
   }
-  receiveButtonClick() {
-    this.addTaskTrigger.emit(this.newTaskName);
+  handleButtonClick() {
+    this.addTaskEvent.emit(this.newTaskName);
   }
 }

@@ -6,16 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent {
-  taskList: string[] = [];
+  taskList: any[] = [];
 
   addTask(task: string) {
     if (task) {
       task = task.trim();
-      if (task.length !== 0) this.taskList.unshift(task);
+      if (task.length !== 0)
+        this.taskList.unshift({ taskName: task, checked: false });
     }
   }
 
   deleteTask(taskIndex: number) {
     this.taskList.splice(taskIndex, 1);
+  }
+
+  toggleTaskCheck(taskIndex: number, state: boolean) {
+    this.taskList[taskIndex].checked = state;
   }
 }

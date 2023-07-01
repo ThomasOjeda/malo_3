@@ -7,12 +7,12 @@ import { Output, EventEmitter } from '@angular/core';
   styleUrls: ['./checkbox.component.scss'],
 })
 export class CheckboxComponent {
-  @Output() checkedInputEvent = new EventEmitter<boolean>();
+  @Output() checkboxEvent = new EventEmitter<boolean>();
 
   checked: boolean = false;
 
-  handleCheckboxChecked(event: Event) {
+  handleCheckboxEvent(event: Event) {
     this.checked = (event.target as HTMLInputElement).checked as boolean;
-    this.checkedInputEvent.emit(this.checked);
+    this.checkboxEvent.emit(this.checked);
   }
 }
