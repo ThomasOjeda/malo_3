@@ -1,0 +1,6 @@
+<app-task
+  (deleteButtonClicked)="deleteTask(i)"
+  *ngFor="let task of taskList; let i = index"
+>
+  {{ task }}
+</app-task>
