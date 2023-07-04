@@ -7,11 +7,11 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class TaskComponent {
   @Output() deleteButtonEvent = new EventEmitter();
-  @Output() checkboxEvent = new EventEmitter<boolean>();
+  @Output() checkedChange = new EventEmitter<boolean>();
 
   @Input() checked: boolean = false;
   receiveCheckedEvent($event: boolean) {
-    this.checkboxEvent.emit($event);
+    this.checkedChange.emit($event);
   }
 
   handleDeleteButtonClick() {

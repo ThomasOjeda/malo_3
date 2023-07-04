@@ -1,7 +1,6 @@
 <app-task
-  [checked]="taskList[i].checked"
   (deleteButtonEvent)="deleteTask(i)"
-  (checkboxEvent)="toggleTaskCheck(i, $event)"
+  [(checked)]="taskList[i].checked"
   *ngFor="let task of taskList; let i = index"
 >
   {{ task.taskName }}
